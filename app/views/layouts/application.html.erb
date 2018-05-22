@@ -4,11 +4,31 @@
     <title>Memory</title>
     <%= csrf_meta_tags %>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper blue">
+        <a href="<%= root_path %>" class="brand-logo black-text" style="margin-left: 1em;"><i class="material-icons">home</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <%# render partial: 'users/shared/login_items' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
+    <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <%= yield :actions %>
+    </ul>
+  </div>
   </body>
 </html>
